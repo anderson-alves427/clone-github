@@ -12,6 +12,8 @@ export const GlobalStyle = createGlobalStyle`
         --text-body: rgba(22, 25, 26, 0.7);
         --text-light: rgba(22, 25, 26, 0.5);
 
+        --menu-light: #5B5E5E;
+
         --white: #fff;
     }
 
@@ -66,13 +68,9 @@ export const GlobalStyle = createGlobalStyle`
 
 `;
 
-export const Container = styled.div`
-    max-width: 1280px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+// export const Container = styled.div`
+//     max-width: 1280px;
+//     display: flex;
+//     margin: 0 auto;
 
-    @media (min-width: 768px){
-        flex-direction: row;
-    }
-`;
+// `;

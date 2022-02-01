@@ -5,7 +5,6 @@ export const Container = styled.aside`
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    padding: 1rem;
 
     > h1 {
         width: 100%;
@@ -21,7 +20,7 @@ export const Container = styled.aside`
         margin-bottom: 1rem;
 
         &:hover {
-            filter: brightness(0.9  );
+            filter: brightness(0.9);
         }
     }
 
@@ -70,7 +69,7 @@ export const Person = styled.div`
         align-items: center;
 
         img {
-            width: 80%;
+            width: 100%;
         }
   }
 `;

@@ -1,7 +1,9 @@
-import { Container, Stars, Informations, Person } from './style';
+import { Container, Stars, Informations, Person } from './styles';
 
 import { BiBuilding } from "react-icons/bi";
 import { MdLocationOn, MdEmail } from "react-icons/md";
+import { BsTwitter } from "react-icons/bs";
+import { FaBloggerB } from "react-icons/fa";
 
 interface PersonalProfileProps {
     avatar_url: string;
@@ -66,17 +68,30 @@ export function PersonalProfile({
 
             <Informations>
                 {company && (<li>
-                    <MdLocationOn />
+                    <BiBuilding />
                     <span>{company}</span>
                 </li>)}
-                {/* <li>
+
+                {location && (<li>
+                    <MdLocationOn />
+                    <span>{location}</span>
+                </li>)}
+
+                {email && (<li>
                     <MdEmail />
-                    <span>Brasil, Ceará, Caucaia</span>
-                </li>
-                <li>
-                    <BiBuilding />
-                    <span>PedroLauro@dev.com.br</span>
-                </li> */}
+                    <span>{email}</span>
+                </li>)}
+
+                {twitter_username && (<li>
+                    <BsTwitter />
+                    <span>{twitter_username}</span>
+                </li>)}
+
+                {blog && (<li>
+                    <FaBloggerB />
+                    <span>{blog}</span>
+                </li>)}
+
             </Informations>
 
             <p className='report'>Block or Report</p>
