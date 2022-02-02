@@ -21,12 +21,18 @@ interface ProfilePros {
 
 export function Profile () {
     const [repositories, setRepositories] = useState<ProfilePros>({} as ProfilePros)
+    const [search, setSearch] = useState<string>('diego3g');
+
+    function handleSearch(user: string) {
+        setSearch(user);
+        console.log(user);
+      }
 
     useEffect(() =>{
-        api.get('diego3g')
+        api.get(search)
         .then(response => setRepositories(response.data));
         
-    }, []);
+    }, [search]);
 
     return (
         <Container>
@@ -44,7 +50,7 @@ export function Profile () {
                 company={repositories.company}  
             />
 
-            <Header />
+            <Header searchInput={handleSearch}/>
 
         </Container>
         

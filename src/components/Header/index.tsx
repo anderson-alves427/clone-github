@@ -1,13 +1,24 @@
 import { Container, Form, Menu, Icons, MenuVisivel, MenuEscondido } from './styles';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { AiOutlineSearch } from "react-icons/ai";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { AiOutlineMenu } from "react-icons/ai";
 
-export function Header() {
+interface HeaderProps {
+    searchInput: (user: string) => void;
+}
+
+export function Header( {searchInput}: HeaderProps) {
     const [showMenu, setShowMenu] = useState(false);
+    const [search, setSearch] = useState('diego3g');
+
+    function handleSubmit(event: React.FormEvent) {
+        event.preventDefault();
+        searchInput(search);
+        console.log(search)
+    }
 
     return (
         <Container>
@@ -25,9 +36,9 @@ export function Header() {
             </MenuVisivel>
 
             <MenuEscondido openMenu={showMenu}>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     <AiOutlineSearch size={22}/>
-                    <input type="text" />
+                    <input type="text" onChange={e => setSearch(e.currentTarget.value)} />
                 </Form>
 
                 <Menu>
