@@ -10,14 +10,13 @@ interface HeaderProps {
     searchInput: (user: string) => void;
 }
 
-export function Header( {searchInput}: HeaderProps) {
+export const Header = ( {searchInput}: HeaderProps) => {
     const [showMenu, setShowMenu] = useState(false);
-    const [search, setSearch] = useState('diego3g');
+    const [search, setSearch] = useState('');
 
     function handleSubmit(event: React.FormEvent) {
         event.preventDefault();
         searchInput(search);
-        console.log(search)
     }
 
     return (

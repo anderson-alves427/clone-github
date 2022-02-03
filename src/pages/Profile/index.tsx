@@ -5,7 +5,7 @@ import { api } from "../../services/api";
 
 import { Container} from './styles';
 
-interface ProfilePros {
+interface User {
     avatar_url: string;
     name: string;
     login: string;
@@ -19,8 +19,14 @@ interface ProfilePros {
     company?: string
 }
 
-export function Profile () {
-    const [repositories, setRepositories] = useState<ProfilePros>({} as ProfilePros)
+interface Repository {
+    name: string;
+    stargazers_count: number;
+}
+
+export const Profile = () => {
+    const [user, setUser] = useState<User>({} as User)
+    const [repositories, setRepositories] = useState<Repository[]>([]);
     const [search, setSearch] = useState<string>('diego3g');
 
     function handleSearch(user: string) {
@@ -30,6 +36,9 @@ export function Profile () {
 
     useEffect(() =>{
         api.get(search)
+        .then(response => setUser(response.data));
+
+        api.get(`${search}/repos`)
         .then(response => setRepositories(response.data));
         
     }, [search]);
@@ -37,17 +46,18 @@ export function Profile () {
     return (
         <Container>
             <PersonalProfile 
-                avatar_url={repositories.avatar_url} 
-                name={repositories.name} 
-                login={repositories.login}
-                followers={repositories.followers}
-                following={repositories.following}
-                bio={repositories.bio}
-                email={repositories.email}
-                twitter_username={repositories.twitter_username}
-                location={repositories.location}
-                blog={repositories.blog}
-                company={repositories.company}  
+                avatar_url={user.avatar_url} 
+                name={user.name} 
+                login={user.login}
+                followers={user.followers}
+                following={user.following}
+                stars={repositories.reduce((acumulador, valorAtual) => acumulador + valorAtual.stargazers_count, 0)}
+                bio={user.bio}
+                email={user.email}
+                twitter_username={user.twitter_username}
+                location={user.location}
+                blog={user.blog}
+                company={user.company}  
             />
 
             <Header searchInput={handleSearch}/>

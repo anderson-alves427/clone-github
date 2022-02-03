@@ -16,10 +16,11 @@ interface PersonalProfileProps {
     twitter_username?: string;
     location?: string;
     blog?: string;
-    company?: string
+    company?: string,
+    stars: number
 }
 
-export function PersonalProfile({
+export const PersonalProfile = ({
     avatar_url,
     name,
     login,
@@ -30,8 +31,9 @@ export function PersonalProfile({
     twitter_username,
     location,
     blog,
-    company
-}: PersonalProfileProps) {
+    company,
+    stars
+}: PersonalProfileProps) => {
     return (
         <Container>
             <h1>GitHub</h1>
@@ -55,7 +57,7 @@ export function PersonalProfile({
                     <span>following</span>
                 </li>
                 <li>
-                    <p>06</p>
+                    <p>{stars}</p>
                     <span>stars</span>
                 </li>
             </Stars>
