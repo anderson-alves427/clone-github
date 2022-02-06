@@ -3,7 +3,8 @@ import { PersonalProfile } from "../../components/PersonalProfile";
 import { Header } from "../../components/Header";
 import { api } from "../../services/api";
 
-import { Container} from './styles';
+import { Container, Main} from './styles';
+import { Bar } from "../../components/Bar";
 
 interface User {
     avatar_url: string;
@@ -60,7 +61,11 @@ export const Profile = () => {
                 company={user.company}  
             />
 
+        <Main>
             <Header searchInput={handleSearch}/>
+
+            <Bar />
+        </Main>
 
         </Container>
         
