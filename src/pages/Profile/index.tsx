@@ -5,6 +5,7 @@ import { api } from "../../services/api";
 
 import { Container, Main} from './styles';
 import { Bar } from "../../components/Bar";
+import { PopularRepositories } from "../../components/PopularRepositories";
 
 interface User {
     avatar_url: string;
@@ -21,7 +22,6 @@ interface User {
 }
 
 interface Repository {
-    name: string;
     stargazers_count: number;
 }
 
@@ -65,6 +65,10 @@ export const Profile = () => {
             <Header searchInput={handleSearch}/>
 
             <Bar />
+
+            <PopularRepositories 
+                repositories={repositories}
+            />
         </Main>
 
         </Container>
