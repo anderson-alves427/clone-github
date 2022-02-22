@@ -16,7 +16,7 @@ export const Container = styled.header`
     top: 0;
     right: 0;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         z-index: 0;
         position: relative;
         flex-direction: row;
@@ -44,7 +44,7 @@ export const MenuEscondido = styled.div<Props>`
     background-color: var(--menu-light);
     padding-top: 1rem;
     
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         display: flex;
         flex-direction: row;
         padding-top: 0;
@@ -75,7 +75,7 @@ export const Form = styled.form`
         color: var(--text-strong);
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         margin: 0.5rem;
         padding: 1rem 0.5rem;
         background-color: var(--text-extra-light);
@@ -94,7 +94,7 @@ export const Menu = styled.ul`
 
         font-size: 1.2rem;
 
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
             margin-top: 0%;
             margin: 0.5rem;
             border-bottom: 0;
@@ -106,7 +106,7 @@ export const Menu = styled.ul`
             color: var(--white);
             transition: 0.2s;
 
-            @media (min-width: 768px) {
+            @media (min-width: 1024px) {
                 color: var(--text-body-strong);
                 &:hover {
                 color: var(--color-primary);
@@ -116,7 +116,7 @@ export const Menu = styled.ul`
         }
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -125,7 +125,7 @@ export const Menu = styled.ul`
 
 `
 export const Icons = styled.div`
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         position: absolute;
         top: 0.8rem;
         right: 0.5rem;

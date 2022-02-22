@@ -1,16 +1,5 @@
 import { Container, ListRepositories, Content } from './styles';
 
-interface IRepositories {
-    name: string;
-    description: string;
-    language: string; 
-}
-interface PopularRepositoriesProps {
-    repositories: IRepositories[]
-}
-
-
-
 export const PopularRepositories = ({ repositories }: any) => {
     return(
         <Container>
