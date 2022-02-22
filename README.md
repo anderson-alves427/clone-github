@@ -18,3 +18,5 @@ You will also see any lint errors in the console.
 
 
 Este projeto foi feito com um design diferente do layout original do GitHub pois seguiu um modelo de protótipo elaborado no figma, como teste.
+
+O projeto ainda está em andamento
